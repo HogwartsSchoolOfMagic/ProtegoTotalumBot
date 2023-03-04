@@ -1,0 +1,39 @@
+version: "3.9"
+
+networks:
+  leo-network:
+    name: $APPLICATION_NAME-network
+    external: false
+
+services:
+  database:
+    container_name: $APPLICATION_NAME-postgres
+    build:
+      context: ./postgres
+      dockerfile: ./Dockerfile
+    ports:
+      - ${PG_PORT}:5432
+    environment:
+      POSTGRES_DB: $PG_DBNAME
+      POSTGRES_USER: $PG_USER
+      POSTGRES_PASSWORD: $PG_PASSWORD
+    networks:
+      - leo-network
+  leo-bot:
+    container_name: $APPLICATION_NAME-bot
+    depends_on:
+      - database
+    build:
+      context: ../dlb-discord
+      dockerfile: ./Dockerfile
+    ports:
+      - "8080:8080"
+    command:
+      - discord-leo-bot.jar
+    environment:
+      LEO_DB_HOST: database
+      LEO_DB_PORT: 5432
+    networks:
+      - leo-network
+    env_file:
+      - ignore.env

@@ -1,0 +1,70 @@
+name-template: 'v$RESOLVED_VERSION'
+tag-template: 'v$RESOLVED_VERSION'
+template: |
+  # Что нового
+
+  $CHANGES
+
+  **Полный список изменений**: https://github.com/$OWNER/$REPOSITORY/compare/$PREVIOUS_TAG...v$RESOLVED_VERSION
+
+change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+no-changes-template: 'Нет изменений'
+
+categories:
+  - title: '☄️ Критические изменения'
+    label: '☄️ BREAKING CHANGES'
+  - title: '⚡️ Новое'
+    label: '⚡️ type: feature'
+  - title: '🪲 Исправления ошибок'
+    label: '🪲 type: bug'
+  - title: '🧰 Обслуживание'
+    label:
+      - '🧰 type: maintenance'
+      - '🧰 type: refactoring'
+  - title: '📖 Документация'
+    label: '📖 type: documentation'
+  - title: '📝 Другие изменения'
+  - title: '📈 Обновления зависимостей'
+    label: '📈 type: dependencies'
+    collapse-after: 5
+
+version-resolver:
+  major:
+    labels:
+      - '☄️ BREAKING CHANGES'
+  minor:
+    labels:
+      - '⚡️ type: feature'
+  patch:
+    labels:
+      - '🪲 type: bug'
+      - '🧰 type: maintenance'
+      - '🧰 type: refactoring'
+      - '📖 type: documentation'
+      - '📈 type: dependencies'
+
+autolabeler:
+  - label: '🧰 type: maintenance'
+    files:
+      - '.github/*'
+      - '.run/*'
+  - label: '📈 type: dependencies'
+    files:
+      - 'buildSrc/*'
+  - label: '📖 type: documentation'
+    files:
+      - '*.md'
+      - 'docs/*'
+    branch:
+      - '/docs{0,1}\/.+/'
+  - label: '🪲 type: bug'
+    branch:
+      - '/fix\/.+/'
+    title:
+      - '/fix/i'
+  - label: '⚡️ type: feature'
+    branch:
+      - '/feature\/.+/'
+
+exclude-labels:
+  - 'skip-changelog'
