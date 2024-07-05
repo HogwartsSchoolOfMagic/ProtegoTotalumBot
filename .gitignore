@@ -1,6 +1,18 @@
 ### Indellij Idea ###
 **.iml
-.idea/
+.idea/git_toolbox_blame.xml
+.idea/jarRepositories.xml
+.idea/compiler.xml
+.idea/kotlinc.xml
+.idea/ktlint-plugin.xml
+.idea/misc.xml
+.idea/workspace.xml
+.idea/.gitignore
+.idea/inspectionProfiles/
+.idea/gradle.xml
+.idea/sonarlint.xml
+.idea/vcs.xml
+.idea/git_toolbox_prj.xml
 
 ### Gradle ###
 **/.gradle/

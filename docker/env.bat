@@ -1,6 +1,6 @@
-set APPLICATION_NAME=leo
+set APPLICATION_NAME=protego-totalum
 
-set PG_DBNAME=leo_db
-set PG_USER=leo_login
-set PG_PASSWORD=leo_password
+set PG_DBNAME=protego_totalum
+set PG_USER=protego_totalum
+set PG_PASSWORD=protego_totalum
 set PG_PORT=5123

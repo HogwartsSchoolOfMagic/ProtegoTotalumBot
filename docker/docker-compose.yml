@@ -1,10 +1,3 @@
-version: "3.9"
-
-networks:
-  leo-network:
-    name: $APPLICATION_NAME-network
-    external: false
-
 services:
   database:
     container_name: $APPLICATION_NAME-postgres
@@ -18,22 +11,27 @@ services:
       POSTGRES_USER: $PG_USER
       POSTGRES_PASSWORD: $PG_PASSWORD
     networks:
-      - leo-network
-  leo-bot:
+      - protego-totalum-network
+  protego-totalum-bot:
     container_name: $APPLICATION_NAME-bot
     depends_on:
       - database
     build:
-      context: ../dlb-discord
+      context: ../pt-discord
       dockerfile: ./Dockerfile
     ports:
       - "8080:8080"
     command:
-      - discord-leo-bot.jar
+      - protego-totalum-bot.jar
     environment:
-      LEO_DB_HOST: database
-      LEO_DB_PORT: 5432
+      PROTEGO_TOTALUM_DB_HOST: database
+      PROTEGO_TOTALUM_DB_PORT: 5432
     networks:
-      - leo-network
+      - protego-totalum-network
     env_file:
       - ignore.env
+
+networks:
+  protego-totalum-network:
+    name: $APPLICATION_NAME-network
+    external: false

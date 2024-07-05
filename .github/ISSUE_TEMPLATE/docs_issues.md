@@ -1,10 +1,11 @@
 ---
-name: 📖 Docs issues
+name: 📖 Документация
 about: Улучшения или дополнения к документации
-title: '[DOCS] Краткое название работ по проектной документации.'
-labels: 'type: documentation, status: backlog, priority: low'
-assignees: 'SmithyVL'
-
+title: "Краткое название"
+labels: ["type: documentation"]
+projects: ["HogwartsSchoolOfMagic/projects/2"]
+assignees: 
+  - SmithyVL
 ---
 
 **Описание документации**
