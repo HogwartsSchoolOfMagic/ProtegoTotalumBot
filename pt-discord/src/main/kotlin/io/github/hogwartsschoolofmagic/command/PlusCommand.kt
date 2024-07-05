@@ -36,9 +36,13 @@ class PlusCommand : Command() {
             commandsService.isActiveCommand(commandDiscordId, serverDiscordId)
                 .collect {
                     if (it) {
-                        val first = command.integers[ARG1_NAME]!!
-                        val second = command.integers[ARG2_NAME]!!
-                        response.respond { content = "$first + $second = ${first + second}" }
+                        val first = command.integers.getOrDefault(ARG1_NAME, null)
+                        val second = command.integers.getOrDefault(ARG2_NAME, null)
+                        if (first != null && second != null) {
+                            response.respond { content = "$first + $second = ${first.plus(second)}" }
+                        } else {
+                            response.respond { content = "Один из параметров не передан" }
+                        }
                     } else {
                         response.respond { content = "Команда: ${command.data.name} выключена для этого сервера!" }
                     }

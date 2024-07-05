@@ -7,11 +7,11 @@ tasks.findByName("bootJar")?.apply {
 }
 
 dependencies {
-    // Spring
+    // Зависимости, используемые при запуске приложения.
+    // Spring.
     runtimeOnly(Libs.SPRING_BOOT_STARTER)
 
-    // База данных
-    implementation(Libs.SPRING_BOOT_DATA_R2DBC)
+    // Базы данных.
     runtimeOnly(Libs.POSTGRES)
     runtimeOnly(Libs.LIQUIBASE)
     runtimeOnly(Libs.PG_R2DBC) {
@@ -19,9 +19,13 @@ dependencies {
     }
     runtimeOnly(Libs.NETTY_CODEC)
 
-    // Kotlin
+    // Зависимости, используемые при компиляции приложения.
+    // База данных.
+    implementation(Libs.SPRING_BOOT_DATA_R2DBC)
+
+    // Kotlin.
     implementation(Libs.KOTLINX_REACTOR)
 
-    // Проектные модули
+    // Проектные модули.
     implementation(project(":pt-common"))
 }
