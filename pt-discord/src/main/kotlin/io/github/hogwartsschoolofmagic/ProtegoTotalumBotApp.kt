@@ -8,10 +8,10 @@ import org.springframework.boot.runApplication
  * Клас для запуска Discord бота.
  */
 @SpringBootApplication
-class LeoBotApp
+class ProtegoTotalumBotApp
 
 fun main() {
-    runApplication<LeoBotApp> {
+    runApplication<ProtegoTotalumBotApp> {
         // Исправление ошибки "NativePRNGNonBlocking is not found, fallback to SHA1PRNG".
         System.setProperty("io.ktor.random.secure.random.provider", "DRBG")
 

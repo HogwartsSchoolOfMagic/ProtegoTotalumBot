@@ -1,17 +1,17 @@
 spring:
   # Для добавления схемы для подключения к БД добавить в конец 'spring.r2dbc/liquibase.url':
-  # '?currentSchema=${LEO_DB_SCHEMA_NAME:leo_bot_schema}'
+  # '?currentSchema=${PT_DB_SCHEMA_NAME:protego_totalum}'
   r2dbc:
-    url: r2dbc:${LEO_DB_TYPE:postgresql}://${LEO_DB_HOST:localhost}:${LEO_DB_PORT:5123}/${LEO_DB_NAME:leo_db}
-    username: ${LEO_DB_LOGIN:leo_login}
-    password: ${LEO_DB_PASSWORD:leo_password}
+    url: r2dbc:${PT_DB_TYPE:postgresql}://${PT_DB_HOST:localhost}:${PT_DB_PORT:5123}/${PT_DB_NAME:protego_totalum}
+    username: ${PT_DB_LOGIN:protego_totalum}
+    password: ${PT_DB_PASSWORD:protego_totalum}
   liquibase:
-    url: jdbc:${LEO_DB_TYPE:postgresql}://${LEO_DB_HOST:localhost}:${LEO_DB_PORT:5123}/${LEO_DB_NAME:leo_db}
-    user: ${LEO_DB_LOGIN:leo_login}
-    password: ${LEO_DB_PASSWORD:leo_password}
+    url: jdbc:${PT_DB_TYPE:postgresql}://${PT_DB_HOST:localhost}:${PT_DB_PORT:5123}/${PT_DB_NAME:protego_totalum}
+    user: ${PT_DB_LOGIN:protego_totalum}
+    password: ${PT_DB_PASSWORD:protego_totalum}
 
 logging:
   level:
     org:
       springframework:
-        r2dbc: ${LEO_R2DBC_LOGGING_LEVEL:DEBUG}
+        r2dbc: ${PT_R2DBC_LOGGING_LEVEL:DEBUG}

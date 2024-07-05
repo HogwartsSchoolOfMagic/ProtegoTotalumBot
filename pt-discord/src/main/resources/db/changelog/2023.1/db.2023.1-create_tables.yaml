@@ -36,7 +36,7 @@ databaseChangeLog:
                     nullable: false
                   defaultValueBoolean: false
                   remarks: Флаг того, что бот присутствует/не присутствует на сервере
-            remarks: Информация о серверах, где присутствует 'Leo Bot'
+            remarks: Информация о серверах, где присутствует бот 'Protego Totalum'
             tableName: bot_servers
         - createTable:
             columns:
@@ -79,7 +79,7 @@ databaseChangeLog:
                   name: description
                   type: text
                   remarks: Описание команды
-            remarks: Информация о командах серверов, где присутствует 'Leo Bot'
+            remarks: Информация о командах серверов, где присутствует бот 'Protego Totalum'
             tableName: bot_commands
         - createIndex:
             columns:

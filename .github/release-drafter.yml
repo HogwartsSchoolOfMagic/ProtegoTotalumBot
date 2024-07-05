@@ -18,9 +18,10 @@ categories:
   - title: '🪲 Исправления ошибок'
     label: '🪲 type: bug'
   - title: '🧰 Обслуживание'
-    label:
-      - '🧰 type: maintenance'
-      - '🧰 type: refactoring'
+    labels: [
+      '🧰 type: maintenance',
+      '🧰 type: refactoring'
+    ]
   - title: '📖 Документация'
     label: '📖 type: documentation'
   - title: '📝 Другие изменения'
