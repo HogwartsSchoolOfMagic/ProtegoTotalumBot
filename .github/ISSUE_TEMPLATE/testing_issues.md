@@ -1,10 +1,11 @@
 ---
-name: 🧪 Testing issues
+name: 🧪 Тестирование
 about: Тестирование кода
-title: '[TESTING] Краткое название работ по тестированию.'
-labels: 'type: testing, status: backlog, priority: low'
-assignees: 'SmithyVL'
-
+title: "Краткое название"
+labels: ["type: testing"]
+projects: ["HogwartsSchoolOfMagic/projects/2"]
+assignees: 
+  - SmithyVL
 ---
 
 **Описание кейса для тестирования**

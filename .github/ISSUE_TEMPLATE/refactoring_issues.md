@@ -1,10 +1,11 @@
 ---
-name: 🧾 Refactoring issues
+name: 🧾 Рефакторинг
 about: Оптимизация, улучшение и форматирование кода
-title: '[REFACTORING] Краткое название работ по рефакторингу.'
-labels: 'type: refactoring, status: backlog, priority: low'
-assignees: 'SmithyVL'
-
+title: "Краткое название"
+labels: ["type: refactoring"]
+projects: ["HogwartsSchoolOfMagic/projects/2"]
+assignees: 
+  - SmithyVL
 ---
 
 **Описание рефакторинга**

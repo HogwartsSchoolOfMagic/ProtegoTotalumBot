@@ -10,7 +10,7 @@ plugins {
 
 sonarqube {
     properties {
-        property("sonar.projectKey", "HogwartsSchoolOfMagic_DiscordLeoBot")
+        property("sonar.projectKey", "HogwartsSchoolOfMagic_ProtegoTotalumBot")
         property("sonar.organization", "hogwarts-school-of-magic")
         property("sonar.host.url", "https://sonarcloud.io")
     }

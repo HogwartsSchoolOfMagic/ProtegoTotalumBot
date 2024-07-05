@@ -1,7 +1,7 @@
-rootProject.name = "DiscordLeoBot"
+rootProject.name = "ProtegoTotalumBot"
 
 include(
-    "dlb-util",
-    "dlb-database",
-    "dlb-discord"
+    "pt-common",
+    "pt-database",
+    "pt-discord",
 )

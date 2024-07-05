@@ -24,7 +24,7 @@ services:
     depends_on:
       - database
     build:
-      context: ../dlb-discord
+      context: ../pt-discord
       dockerfile: ./Dockerfile
     ports:
       - "8080:8080"

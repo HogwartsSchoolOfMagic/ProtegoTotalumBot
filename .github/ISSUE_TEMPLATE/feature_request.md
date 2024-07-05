@@ -1,10 +1,11 @@
 ---
-name: 🚀 Feature request
+name: 🚀 Новая функциональность
 about: Предложите идею для этого проекта
-title: '[FEATURE] Краткое название функциональности.'
-labels: 'type: feature, status: backlog, priority: low'
-assignees: 'SmithyVL'
-
+title: "Краткое название"
+labels: ["type: feature"]
+projects: ["HogwartsSchoolOfMagic/projects/2"]
+assignees: 
+  - SmithyVL
 ---
 
 **Описание функциональности**
