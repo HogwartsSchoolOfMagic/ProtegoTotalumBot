@@ -1,4 +1,4 @@
 databaseChangeLog:
   - include:
-      file: 2023.1/db.2023.1-master.yaml
+      file: init/db.init-master.yaml
       relativeToChangelogFile: true

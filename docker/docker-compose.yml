@@ -1,37 +1,12 @@
 services:
   database:
-    container_name: $APPLICATION_NAME-postgres
-    build:
-      context: ./postgres
-      dockerfile: ./Dockerfile
+    container_name: db-postgres
+    image: postgres:16-alpine
     ports:
       - ${PG_PORT}:5432
     environment:
       POSTGRES_DB: $PG_DBNAME
       POSTGRES_USER: $PG_USER
       POSTGRES_PASSWORD: $PG_PASSWORD
-    networks:
-      - protego-totalum-network
-  protego-totalum-bot:
-    container_name: $APPLICATION_NAME-bot
-    depends_on:
-      - database
-    build:
-      context: ../pt-discord
-      dockerfile: ./Dockerfile
-    ports:
-      - "8080:8080"
-    command:
-      - protego-totalum-bot.jar
-    environment:
-      PROTEGO_TOTALUM_DB_HOST: database
-      PROTEGO_TOTALUM_DB_PORT: 5432
-    networks:
-      - protego-totalum-network
-    env_file:
-      - ignore.env
-
-networks:
-  protego-totalum-network:
-    name: $APPLICATION_NAME-network
-    external: false
+    volumes:
+      - ./postgres/create_schemas.sql:/docker-entrypoint-initdb.d/create_schemas.sql

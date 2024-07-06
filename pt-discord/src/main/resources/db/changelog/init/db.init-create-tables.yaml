@@ -1,7 +1,7 @@
 databaseChangeLog:
   - changeSet:
-      id: 2023.1-create_tables
-      author: Vladislav Kuznetsov
+      id: Инициализация структуры базы данных
+      author: Владислав Кузнецов
       changes:
         - createTable:
             columns:

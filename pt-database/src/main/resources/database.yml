@@ -9,6 +9,7 @@ spring:
     url: jdbc:${PT_DB_TYPE:postgresql}://${PT_DB_HOST:localhost}:${PT_DB_PORT:5123}/${PT_DB_NAME:protego_totalum}
     user: ${PT_DB_LOGIN:protego_totalum}
     password: ${PT_DB_PASSWORD:protego_totalum}
+    liquibaseSchema: liquibase
 
 logging:
   level:

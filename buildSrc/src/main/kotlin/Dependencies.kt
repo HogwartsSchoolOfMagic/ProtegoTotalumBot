@@ -8,7 +8,6 @@ object Groups {
     // Базы данных
     const val POSTGRES = "org.postgresql"
     const val LIQUIBASE = "org.liquibase"
-    const val R2DBC = "org.postgresql"
 
     // Reactor
     const val NETTY = "io.netty"
@@ -20,9 +19,10 @@ object Groups {
     const val JACKSON = "com.fasterxml.jackson.module"
 
     // Kotlin
-    const val KTX = "org.jetbrains.kotlinx"
+    private const val JET_BRAINS = "org.jetbrains"
+    const val KTX = "$JET_BRAINS.kotlinx"
+    const val KT = "$JET_BRAINS.kotlin"
     const val REACTOR_KT = "io.projectreactor.kotlin"
-    const val KT = "org.jetbrains.kotlin"
 }
 
 /**
@@ -33,7 +33,7 @@ object Artifacts {
     const val SPRING_BOOT = "spring-boot"
     const val SPRING_BOOT_STARTER = "${SPRING_BOOT}-starter"
     const val SPRING_BOOT_DATA_R2DBC = "${SPRING_BOOT}-starter-data-r2dbc"
-    const val SPRING_BOOT_DATA_WEBFLUX = "${SPRING_BOOT}-starter-webflux"
+    const val SPRING_BOOT_STARTER_WEBFLUX = "${SPRING_BOOT}-starter-webflux"
 
     // Базы данных
     const val POSTGRES = "postgresql"
@@ -85,10 +85,10 @@ object Libs {
     const val SPRING_BOOT = "${Groups.SPRING_BOOT}:${Artifacts.SPRING_BOOT}"
     const val SPRING_BOOT_STARTER = "${Groups.SPRING_BOOT}:${Artifacts.SPRING_BOOT_STARTER}"
     const val SPRING_BOOT_DATA_R2DBC = "${Groups.SPRING_BOOT}:${Artifacts.SPRING_BOOT_DATA_R2DBC}"
-    const val SPRING_BOOT_DATA_WEBFLUX = "${Groups.SPRING_BOOT}:${Artifacts.SPRING_BOOT_DATA_WEBFLUX}"
+    const val SPRING_BOOT_STARTER_WEBFLUX = "${Groups.SPRING_BOOT}:${Artifacts.SPRING_BOOT_STARTER_WEBFLUX}"
 
     // Базы данных
-    const val PG_R2DBC = "${Groups.R2DBC}:${Artifacts.PG_R2DBC}:${Versions.PG_R2DBC}"
+    const val PG_R2DBC = "${Groups.POSTGRES}:${Artifacts.PG_R2DBC}:${Versions.PG_R2DBC}"
     const val POSTGRES = "${Groups.POSTGRES}:${Artifacts.POSTGRES}"
     const val LIQUIBASE = "${Groups.LIQUIBASE}:${Artifacts.LIQUIBASE}"
 

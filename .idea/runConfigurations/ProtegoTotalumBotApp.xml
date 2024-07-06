@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ProtegoTotalumBotApp" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-    <module name="ProtegoTotalumBot.pt-discord.main" />
-    <option name="SPRING_BOOT_MAIN_CLASS" value="io.github.hogwartsschoolofmagic.ProtegoTotalumBotApp" />
-    <method v="2">
-      <option name="Make" enabled="true" />
-    </method>
-  </configuration>
-</component>

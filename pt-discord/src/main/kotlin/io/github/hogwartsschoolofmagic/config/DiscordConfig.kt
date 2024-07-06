@@ -9,6 +9,7 @@ import kotlinx.coroutines.runBlocking
 import org.springframework.context.annotation.Bean
 import org.springframework.context.annotation.Configuration
 import org.springframework.context.annotation.DependsOn
+import java.lang.System.getenv
 
 /**
  * Основная конфигурация бота в Discord. Здесь происходит:
@@ -29,7 +30,7 @@ class DiscordConfig {
     @Bean
     fun kord(botCommands: List<Command>) =
         runBlocking {
-            Kord(System.getenv("BOT_TOKEN")).apply {
+            Kord(getenv("BOT_TOKEN")).apply {
                 botCommands.asFlow().collect { it.start(this) }
 
                 login {
